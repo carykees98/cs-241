@@ -1,1 +1,1 @@
-# CS-241
+# CS-241 -- Computer Organization
