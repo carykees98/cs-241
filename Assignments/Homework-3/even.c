@@ -6,10 +6,12 @@ int main(int argc, char const *argv[])
 
 loop:
 	if (i % 2)
+	{
 		printf("Odd\n");
-	else
-		printf("Even\n");
-
+		goto inner;
+	}
+	printf("Even\n");
+inner:
 	i++;
 	if (i < 10)
 		goto loop;
