@@ -1,16 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
 
-char peek()
-{
-	char c;
-
-	c = getchar();
-	ungetc(c, stdin);
-
-	return c;
-}
-
 char getFloat(float *number)
 {
 	*number = 0;
@@ -26,25 +16,15 @@ char getFloat(float *number)
 		return c;
 	}
 
-	if (c == '-' || c == '.')
+	if (c == '-')
+		sign = c;
+
+	if (c != '.')
 	{
-		if (c == '-')
-			sign = c;
-		else if (c == '.')
+		while (isdigit(c = getchar()))
 		{
-			goto afterDecimal;
+			*number = *number * 10 + (c - '0');
 		}
-	}
-
-	if (peek() == '.')
-	{
-		getchar();
-		goto afterDecimal;
-	}
-
-	while (isdigit(c = getchar()))
-	{
-		*number = *number * 10 + (c - '0');
 	}
 
 	if (c != '.')
@@ -56,7 +36,7 @@ char getFloat(float *number)
 		ungetc(c, stdin);
 		return c;
 	}
-afterDecimal:
+
 	int divisor = 10;
 	while (isdigit(c = getchar()))
 	{
