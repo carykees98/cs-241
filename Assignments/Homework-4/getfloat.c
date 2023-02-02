@@ -21,6 +21,10 @@ char getFloat(float *number)
 
 	if (c != '.')
 	{
+		if (isdigit(c))
+		{
+			*number = *number * 10 + (c - '0');
+		}
 		while (isdigit(c = getchar()))
 		{
 			*number = *number * 10 + (c - '0');
