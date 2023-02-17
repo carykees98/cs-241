@@ -8,10 +8,9 @@ A small driver is:
 
 int main ()
 {
-char a[] = “Count the length of this string”;
+	char a[] = “Count the length of this string”;
 
-printf (“%d characters in %s\n”, my_strlen(a), a);
-
+	printf (“%d characters in %s\n”, my_strlen(a), a);
 }
 ```
 
