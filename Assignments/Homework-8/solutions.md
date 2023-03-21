@@ -22,4 +22,4 @@
 
     The smallest integer that would not be exact is `1 + 2 ^ (n + 1)`.
 
-    If `n` were to be 23, then the smallest possible non-exact integer would be 16,777,217.`
+    If `n` were to be 23, then the smallest possible non-exact integer would be 16,777,217.
